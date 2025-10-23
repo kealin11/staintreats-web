@@ -1,0 +1,15 @@
+.hero-section {
+  background-color: #f0f8ff; /* Light hospital blue */
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.bg-light-blue {
+  background-color: #f0f8ff;
+}
