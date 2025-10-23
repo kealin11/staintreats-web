@@ -1,47 +1,75 @@
 import { useState } from "react";
-import { FaLinkedin, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-30">
-      <div className="flex justify-between items-center px-4 md:px-8 py-3 w-full max-w-7xl mx-auto">
-        {/* LEFT: Logo */}
-        <Link to="/">
-          <img src="/logo.jpg" alt="Hospital Logo" className="h-14 w-auto" />
+    <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 border-b border-gray-200">
+      <div className="flex justify-between items-center px-4 md:px-10 py-3 max-w-7xl mx-auto">
+        {/* LOGO */}
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src="/logo2.jpg"
+            alt="StainTreats Logo"
+            className="h-14 w-auto object-contain"
+          />
+          <span className="text-2xl font-extrabold text-red-600 tracking-wide hidden sm:block">
+            StainTreats
+          </span>
         </Link>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex gap-8 text-blue-700 font-medium">
-          <Link to="/services" className="hover:text-blue-500 transition-colors">
+        {/* DESKTOP NAV LINKS */}
+        <nav className="hidden md:flex gap-8 text-gray-800 font-semibold items-center">
+          <Link
+            to="/"
+            className="hover:text-red-600 transition-colors duration-200"
+          >
+            Home
+          </Link>
+          <Link
+            to="/services"
+            className="hover:text-red-600 transition-colors duration-200"
+          >
             Services
           </Link>
-          <Link to="/about" className="hover:text-blue-500 transition-colors">
+          <Link
+            to="/about"
+            className="hover:text-red-600 transition-colors duration-200"
+          >
             About Us
           </Link>
-          <Link to="/contact" className="hover:text-blue-500 transition-colors">
-            Contact Us
-          </Link>
-          <Link to="/machine" className="hover:text-blue-500 transition-colors">
-            Machines
+          <Link
+            to="/contact"
+            className="hover:text-red-600 transition-colors duration-200"
+          >
+            Contact
           </Link>
         </nav>
 
-        {/* RIGHT: Social Icon + Mobile Menu Button */}
+        {/* SOCIALS + MOBILE TOGGLE */}
         <div className="flex items-center gap-4">
           <a
-            href="https://www.linkedin.com/company/milpark-radiology-inc/"
+            href="https://facebook.com"
             target="_blank"
             rel="noreferrer"
+            className="text-gray-700 hover:text-red-600 transition-colors"
           >
-            <FaLinkedin className="text-2xl hover:text-blue-500 transition-colors" />
+            <FaFacebookF className="text-xl" />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-gray-700 hover:text-red-600 transition-colors"
+          >
+            <FaInstagram className="text-xl" />
           </a>
 
           {/* MOBILE MENU BUTTON */}
           <button
-            className="md:hidden text-2xl text-blue-700"
+            className="md:hidden text-2xl text-gray-800 hover:text-red-600 transition"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <FaTimes /> : <FaBars />}
@@ -49,14 +77,23 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE NAV */}
+      {/* MOBILE MENU */}
       {isOpen && (
-        <nav className="md:hidden bg-white border-t border-gray-200 shadow-sm">
-          <ul className="flex flex-col px-4 py-4 gap-4 text-blue-700 font-medium">
+        <nav className="md:hidden bg-white border-t border-gray-200 shadow-md">
+          <ul className="flex flex-col px-6 py-4 gap-4 text-gray-800 font-semibold">
+            <li>
+              <Link
+                to="/"
+                className="hover:text-red-600 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
             <li>
               <Link
                 to="/services"
-                className="hover:text-blue-500 transition-colors"
+                className="hover:text-red-600 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Services
@@ -65,7 +102,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/about"
-                className="hover:text-blue-500 transition-colors"
+                className="hover:text-red-600 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 About Us
@@ -74,19 +111,10 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact"
-                className="hover:text-blue-500 transition-colors"
+                className="hover:text-red-600 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Contact Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/machine"
-                className="hover:text-blue-500 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Machines
+                Contact
               </Link>
             </li>
           </ul>
