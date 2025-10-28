@@ -1,380 +1,212 @@
-import { FaBrain, FaHeartbeat, FaEye, FaSearch, FaShieldAlt, FaClock, FaStethoscope } from 'react-icons/fa';
-import { SiSpine } from "react-icons/si";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Car, Droplet, Sparkles, Shield, Clock, Crown } from "lucide-react";
 
 const Services = () => {
-    const brainServices = [
-      {
-        title: 'Brain Aneurysm Coiling & Flow Diversion',
-        description: 'Balloon-like bulges in brain arteries can rupture and cause life-threatening bleeding. We offer minimally invasive treatment using coils or flow diverters to safely seal off aneurysms and prevent rupture.',
-        icon: <FaBrain className="w-8 h-8" style={{ color: 'var(--color-error-500)' }} />,
-        features: [
-          'Minimally Invasive Coiling',
-          'Flow Diversion Technology'
-        ],
-        category: 'brain'
-      },
-      {
-        title: 'Arteriovenous Malformations (AVM)',
-        description: 'AVMs are abnormal tangles of arteries and veins that disrupt normal blood flow. Embolization is performed to block off these vessels, either as standalone therapy or as preparation for surgery or radiosurgery.',
-        icon: <FaHeartbeat className="w-8 h-8" style={{ color: 'var(--color-primary-600)' }} />,
-        features: [
-          'Endovascular Embolization',
-          'Pre-surgical Preparation'
-        ],
-        category: 'brain'
-      },
-      {
-        title: 'Ischemic Stroke Intervention',
-        description: 'When a blood clot blocks a brain artery, every minute counts. Our stroke team performs mechanical thrombectomy to rapidly remove the clot and restore brain perfusion, significantly improving outcomes.',
-        icon: <FaClock className="w-8 h-8" style={{ color: 'var(--color-warning-500)' }} />,
-        features: [
-          'Emergency Thrombectomy',
-          'Rapid Clot Removal'
-        ],
-        category: 'brain'
-      },
-      {
-        title: 'Carotid Artery Stenting',
-        description: 'Narrowing of the carotid artery increases the risk of stroke. We place a stent to open the artery and maintain blood flow to the brain, reducing the chance of future strokes.',
-        icon: <FaShieldAlt className="w-8 h-8" style={{ color: 'var(--color-primary-500)' }} />,
-        features: [
-          'Stroke Prevention',
-          'Arterial Stenting'
-        ],
-        category: 'brain'
-      },
-      {
-        title: 'Venous Sinus Stenting for IIH',
-        description: 'Patients with Idiopathic Intracranial Hypertension (IIH) may experience vision loss or headaches due to narrowed brain venous sinuses. A venous stent restores proper drainage and lowers pressure.',
-        icon: <FaEye className="w-8 h-8" style={{ color: 'var(--color-success-600)' }} />,
-        features: [
-          'Vision Preservation',
-          'Pressure Relief'
-        ],
-        category: 'brain'
-      }
-    ];
+  const packages = [
+    {
+      title: "Basic Wash",
+      price: "R200 / month",
+      desc: "Unlimited exterior washes to keep your car spotless — quick, simple, and effective.",
+      icon: Droplet,
+      features: ["Unlimited Exterior Washes", "Fast Service", "No Booking Needed"],
+    },
+    {
+      title: "Super Wash",
+      price: "R300 / month",
+      desc: "Includes both exterior and interior cleaning for a refreshed, all-round shine.",
+      icon: Sparkles,
+      features: ["Exterior + Interior Wash", "Mat & Dashboard Cleaning", "Unlimited Washes"],
+    },
+    {
+      title: "Deluxe Wash",
+      price: "R450 / month",
+      desc: "Our top-tier plan — everything plus a free monthly hand polish and priority service.",
+      icon: Crown,
+      features: ["Exterior + Interior Wash", "1 Free Hand Polish", "Priority Member Access"],
+    },
+  ];
 
-    const spinalServices = [
-      {
-        title: 'Spinal Dural Arteriovenous Fistula (SDAVF)',
-        description: 'This rare condition causes abnormal blood flow in the spinal cord, leading to weakness or numbness. Endovascular embolization or surgery is used to disconnect the fistula and restore normal circulation.',
-        icon: <SiSpine className="w-8 h-8" style={{ color: 'var(--color-primary-700)' }} />,
-        features: [
-          'Fistula Disconnection',
-          'Circulation Restoration'
-        ],
-        category: 'spinal'
-      },
-      {
-        title: 'CSF-Venous Fistula Embolization',
-        description: 'In cases of persistent spinal CSF leaks causing debilitating headaches, we use advanced imaging to localize the leak and embolize the fistula, offering long-term relief.',
-        icon: <FaSearch className="w-8 h-8" style={{ color: 'var(--color-success-500)' }} />,
-        features: [
-          'Advanced Leak Localization',
-          'Long-term Relief'
-        ],
-        category: 'spinal'
-      }
-    ];
+  const addOns = [
+    {
+      title: "Hydro Detailing",
+      desc: "Deep-clean your car using advanced hydro-jet technology for an unbeatable shine.",
+      icon: Shield,
+      features: ["Hydro Jet Rinse", "Undercarriage Clean", "Water-Saving System"],
+    },
+    {
+      title: "Premium Detailing",
+      desc: "Full interior and exterior detailing for that brand-new showroom finish.",
+      icon: Car,
+      features: ["Seat Shampoo", "Wax & Paint Protection", "Engine Bay Detailing"],
+    },
+  ];
 
-    const additionalServices = [
-      {
-        title: 'Dural Arteriovenous Fistula (dAVF)',
-        description: 'This condition involves abnormal artery-to-vein connections in the brain lining (dura). Left untreated, it may lead to hemorrhage or neurological symptoms. Endovascular embolization safely seals off these connections.',
-        icon: <FaStethoscope className="w-8 h-8" style={{ color: 'var(--color-error-600)' }} />,
-        features: [
-          'Hemorrhage Prevention',
-          'Neurological Protection'
-        ],
-        category: 'brain'
-      }
-    ];
-
-
-    return (
-      <div className="min-h-screen bg-[#F4F9FF] section-spacing">
-        {/* WELCOME BANNER */}
-        <div
-        className="relative h-[650px] bg-cover bg-center flex items-center justify-center text-center"
-        style={{ backgroundImage: "url('/candit 3.jpg')" }}
+  return (
+    <div className="min-h-screen bg-[#F9FAFB] text-[#1E293B] overflow-hidden">
+      {/* HERO SECTION */}
+      <div
+        className="relative h-[600px] bg-cover bg-center flex items-center justify-center text-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1597008190853-bf0b0c497f8f?auto=format&fit=crop&w=1600&q=80')",
+        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative z-10">
-          <span className="bg-white text-black text-sm md:text-base font-semibold px-4 py-1 rounded-full uppercase tracking-widest mb-8 inline-block">
-            <div>
-              <FaBrain className="w-8 h-8" />
-            </div>
-          </span>
-
-          <div className="text-center mb-16">
-            <h1 className="text-white text-5xl md:text-5xl font-bold leading-tight max-w-5xl mx-auto">
-              Advanced Neurovascular & Spinal Interventions
-            </h1>
-            <p className="text-xl text-navy-100 max-w-4xl mx-auto">
-              Delivering cutting-edge, minimally invasive treatments for complex neurological conditions with precision, expertise, and compassionate care for optimal patient outcomes.
-            </p>
-          </div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent"></div>
+        <motion.div
+          className="relative z-10 max-w-3xl mx-auto px-6 text-white"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+            Our <span className="text-red-500">Unlimited Wash</span> Packages
+          </h1>
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+            Choose your plan, wash as often as you like, and experience the
+            StainTreats shine — all month long.
+          </p>
+          <Link
+            to="/hydro"
+            className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg transition-transform transform hover:scale-105"
+          >
+            💧 View Hydro Packages
+          </Link>
+        </motion.div>
       </div>
 
-      <div className="container-medical">
-        {/*Button to Strokes Page*/}
-        <div className="w-full flex justify-center mb-16 mt-8">
-          <Link
-            to="/strokes"
-            className="relative inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-xl px-12 py-4 rounded-full shadow-xl transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:from-blue-700 hover:to-blue-600"
+      {/* PACKAGES SECTION */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.h2
+            className="text-4xl font-extrabold text-[#1E293B] mb-12"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <FaHeartbeat className="w-6 h-6 mr-3 animate-pulse" />
-            Learn More About Stroke 
-            <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 hover:opacity-25 transition-opacity"></span>
+            🚗 Unlimited Wash Plans
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {packages.map(({ title, price, desc, icon: Icon, features }, idx) => (
+              <motion.div
+                key={idx}
+                className="p-8 bg-[#F9FAFB] rounded-2xl shadow-md border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-left"
+                whileHover={{ scale: 1.03 }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon className="w-10 h-10 text-red-600" />
+                  <h3 className="text-2xl font-bold text-[#1E293B]">{title}</h3>
+                </div>
+                <p className="text-gray-600 mb-4">{desc}</p>
+                <p className="text-red-600 font-semibold text-lg mb-6">{price}</p>
+                <ul className="space-y-2">
+                  {features.map((f, i) => (
+                    <li key={i} className="flex items-center text-gray-700">
+                      <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span> {f}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ADD-ON SERVICES */}
+      <section className="bg-[#1E293B] text-white py-20">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-extrabold mb-12 text-white">
+            🔥 Add-On & Hydro Services
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {addOns.map(({ title, desc, icon: Icon, features }, idx) => (
+              <motion.div
+                key={idx}
+                className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all"
+                whileHover={{ scale: 1.03 }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon className="w-10 h-10 text-red-400" />
+                  <h3 className="text-2xl font-bold">{title}</h3>
+                </div>
+                <p className="text-gray-200 mb-4">{desc}</p>
+                <ul className="space-y-2 text-gray-300">
+                  {features.map((f, i) => (
+                    <li key={i} className="flex items-center">
+                      <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span> {f}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="bg-gradient-to-r from-red-700 to-red-500 text-white py-20 text-center relative">
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+            Join the <span className="text-black">Unlimited Shine Club</span>
+          </h2>
+          <p className="text-lg mb-8 text-red-100">
+            Wash every day if you want — enjoy unlimited car care for one simple
+            monthly fee.
+          </p>
+          <Link
+            to="/signup"
+            className="bg-white text-red-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-transform shadow-md"
+          >
+            Become a Member
           </Link>
         </div>
+      </section>
 
-        {/* Brain Interventions Section */}
-        <div className="section-spacing-sm">
-          <div className="flex items-center justify-center mb-12">
-            <div className="flex items-center px-6 py-3 rounded-full" 
-                 style={{ background: `linear-gradient(135deg, var(--color-error-500), var(--color-error-600))`, color: 'white' }}>
-              <FaBrain className="w-6 h-6 mr-3" />
-              <h2 className="text-2xl font-bold">Brain Interventions</h2>
-            </div>
-          </div>
-          
-          <div className="space-y-8">
-            {brainServices.concat(additionalServices.filter(s => s.category === 'brain')).map((service, index) => (
-              <div key={index} className="card-service">
-                <div className="flex flex-col lg:flex-row">
-                  {/* Content Section */}
-                  <div className="flex-1">
-                    <div className="flex items-center mb-6">
-                      <div className="service-icon mr-4">
-                        {service.icon}
-                      </div>
-                      <h3 className="text-2xl lg:text-3xl font-bold text-medical-primary">
-                        {service.title}
-                      </h3>
-                    </div>
-                    
-                    <p className="text-medical-secondary mb-8 text-lg">
-                      {service.description}
-                    </p>
-
-                    {/* Features */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-bold text-medical-primary mb-3 text-lg">Key Procedures</h4>
-                        <ul className="space-y-3">
-                          {service.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-center text-medical-secondary">
-                              <div className="w-3 h-3 rounded-full mr-3 flex-shrink-0 bg-medical-gradient"></div>
-                              <span className="font-medium">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-medical-primary mb-3 text-lg">Benefits</h4>
-                        <ul className="space-y-3">
-                          <li className="flex items-center text-medical-secondary">
-                            <div className="w-3 h-3 rounded-full mr-3 flex-shrink-0" 
-                                 style={{ background: `linear-gradient(135deg, var(--color-success-500), var(--color-success-600))` }}></div>
-                            <span className="font-medium">Minimally Invasive Approach</span>
-                          </li>
-                          <li className="flex items-center text-medical-secondary">
-                            <div className="w-3 h-3 rounded-full mr-3 flex-shrink-0" 
-                                 style={{ background: `linear-gradient(135deg, var(--color-success-500), var(--color-success-600))` }}></div>
-                            <span className="font-medium">Faster Recovery Time</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Image section removed */}
+      {/* WHY CHOOSE US */}
+      <section className="bg-white py-20 text-center">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-extrabold text-[#1E293B] mb-12">
+            ❤️ Why Choose StainTreats
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            {[
+              {
+                icon: Droplet,
+                title: "Unlimited Washes",
+                text: "Wash anytime, as often as you want — no limits, no worries.",
+              },
+              {
+                icon: Sparkles,
+                title: "Attention to Detail",
+                text: "Every wash, polish, and shine is handled with care and precision.",
+              },
+              {
+                icon: Clock,
+                title: "Fast & Convenient",
+                text: "Quick service with outstanding results — every single time.",
+              },
+              {
+                icon: Shield,
+                title: "Trusted Quality",
+                text: "Premium products and techniques to protect your car’s finish.",
+              },
+            ].map(({ icon: Icon, title, text }, idx) => (
+              <motion.div
+                key={idx}
+                className="p-8 bg-[#F9FAFB] rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-2 transition-all"
+              >
+                <div className="text-red-600 mb-4 flex justify-center">
+                  <Icon className="w-10 h-10" />
                 </div>
-              </div>
+                <h3 className="text-xl font-bold text-[#1E293B] mb-2">{title}</h3>
+                <p className="text-gray-600">{text}</p>
+              </motion.div>
             ))}
           </div>
         </div>
-
-        {/* Spinal Interventions Section */}
-        <div className="section-spacing-sm">
-          <div className="flex items-center justify-center mb-12">
-            <div className="flex items-center px-6 py-3 rounded-full" 
-                 style={{ background: `linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700))`, color: 'white' }}>
-              <SiSpine className="w-6 h-6 mr-3" />
-              <h2 className="text-2xl font-bold">Spinal Interventions</h2>
-            </div>
-          </div>
-          
-          <div className="space-y-8">
-            {spinalServices.map((service, index) => (
-              <div key={index} className="card-service">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="flex-1">
-                    <div className="flex items-center mb-6">
-                      <div className="service-icon mr-4">{service.icon}</div>
-                      <h3 className="text-2xl lg:text-3xl font-bold text-medical-primary">{service.title}</h3>
-                    </div>
-                    <p className="text-medical-secondary mb-8 text-lg">{service.description}</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-bold text-medical-primary mb-3 text-lg">Key Procedures</h4>
-                        <ul className="space-y-3">
-                          {service.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-center text-medical-secondary">
-                              <div className="w-3 h-3 rounded-full mr-3 flex-shrink-0 bg-medical-gradient"></div>
-                              <span className="font-medium">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-medical-primary mb-3 text-lg">Benefits</h4>
-                        <ul className="space-y-3">
-                          <li className="flex items-center text-medical-secondary">
-                            <div className="w-3 h-3 rounded-full mr-3 flex-shrink-0" 
-                                 style={{ background: `linear-gradient(135deg, var(--color-success-500), var(--color-success-600))` }}></div>
-                            <span className="font-medium">Advanced Imaging Guidance</span>
-                          </li>
-                          <li className="flex items-center text-medical-secondary">
-                            <div className="w-3 h-3 rounded-full mr-3 flex-shrink-0" 
-                                 style={{ background: `linear-gradient(135deg, var(--color-success-500), var(--color-success-600))` }}></div>
-                            <span className="font-medium">Precise Treatment Delivery</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Image section removed */}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Additional Specialized Services Section */}
-        <div className="section-spacing-sm">
-          <div className="text-center mb-12">
-            <h2 className="text-medical-primary mb-4">Specialized Treatments</h2>
-            <p className="text-lg text-medical-secondary max-w-3xl mx-auto">
-              Advanced interventions for complex neurological conditions requiring specialized expertise and cutting-edge technology.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="p-8 border border-orange-100" 
-                 style={{ borderRadius: 'var(--radius-3xl)', background: `linear-gradient(135deg, var(--color-warning-50), var(--color-warning-100))` }}>
-              <div className="flex items-center mb-4">
-                <FaClock className="w-6 h-6 mr-3" style={{ color: 'var(--color-warning-600)' }} />
-                <h3 className="text-xl font-bold text-medical-primary">Treatment of Low Pressure Headaches</h3>
-              </div>
-              <p className="text-medical-secondary mb-4">
-                Caused by cerebrospinal fluid (CSF) leaks, these headaches worsen when upright. We identify the leak and use targeted fibrin glue or embolization techniques to seal it and relieve symptoms.
-              </p>
-              <div className="flex items-center font-semibold" style={{ color: 'var(--color-warning-600)' }}>
-                <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: 'var(--color-warning-500)' }}></div>
-                Targeted CSF Leak Repair
-              </div>
-            </div>
-
-            <div className="p-8 border" 
-                 style={{ borderRadius: 'var(--radius-3xl)', background: `linear-gradient(135deg, var(--color-primary-50), var(--color-primary-100))`, borderColor: 'var(--color-primary-200)' }}>
-              <div className="flex items-center mb-4">
-                <FaHeartbeat className="w-6 h-6 mr-3" style={{ color: 'var(--color-primary-600)' }} />
-                <h3 className="text-xl font-bold text-medical-primary">Chronic Subdural Hematoma Embolization</h3>
-              </div>
-              <p className="text-medical-secondary mb-4">
-                A buildup of blood under the brain's surface can cause chronic symptoms, especially in the elderly. Middle meningeal artery embolization (MMAE) reduces recurrence risk after surgery or may prevent surgery altogether.
-              </p>
-              <div className="flex items-center font-semibold" style={{ color: 'var(--color-primary-600)' }}>
-                <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: 'var(--color-primary-500)' }}></div>
-                Surgery-Sparing Treatment
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-20">
-          <div className="w-full">
-            <div className="hero-gradient p-8 md:p-16 text-center text-white relative">
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-10 left-10 w-20 h-20 border-2 border-white rounded-full"></div>
-                <div className="absolute bottom-10 right-10 w-16 h-16 border-2 border-white rounded-full"></div>
-                <div className="absolute top-1/2 left-1/4 w-12 h-12 border border-white rounded-full"></div>
-              </div>
-              
-              <div className="relative max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                  Expert Care for Complex Conditions
-                </h2>
-                <p className="text-xl mb-10" style={{ color: 'var(--color-primary-100)' }}>
-                  Our specialized team combines advanced imaging technology with minimally invasive techniques to provide world-class neurovascular care. Every treatment is tailored to your unique condition for the best possible outcomes.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-6">
-                  <Link to="/contact">
-                    <button className="btn-primary transform hover:scale-105 shadow-lg">
-                      Schedule Consultation
-                    </button>
-                  </Link>
-                </div>
-                
-                <div className="mt-12 p-6 rounded-2xl backdrop-blur-sm" 
-                     style={{ backgroundColor: 'color-mix(in oklch, white 20%, transparent)' }}>
-                  <p className="text-lg font-semibold mb-2 text-white text-shadow-lg">24/7 Emergency Stroke & Aneurysm Care</p>
-                  <p style={{ color: 'var(--color-primary-100)' }}>
-                    Our interventional neuroradiology team is available around the clock for urgent cases requiring immediate intervention.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Why Choose Us Section */}
-        <div className="mt-20 text-center">
-          <h2 className="text-medical-primary mb-8">Why Choose Us?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="stat-card">
-              <div className="service-icon mx-auto mb-4">
-                <FaStethoscope className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-medical-primary mb-3">Multidisciplinary Expertise</h3>
-              <p className="text-medical-secondary">Collaboration between neurologists, neurosurgeons, and interventional radiologists for comprehensive patient care.</p>
-            </div>
-            
-            <div className="stat-card">
-              <div className="service-icon mx-auto mb-4" 
-                   style={{ background: `linear-gradient(135deg, var(--color-success-50), var(--color-success-100))` }}>
-                <FaShieldAlt className="w-8 h-8" style={{ color: 'var(--color-success-600)' }} />
-              </div>
-              <h3 className="text-xl font-bold text-medical-primary mb-3">Minimally Invasive</h3>
-              <p className="text-medical-secondary">Faster recovery times and fewer complications through advanced endovascular techniques.</p>
-            </div>
-            
-            <div className="stat-card">
-              <div className="service-icon mx-auto mb-4" 
-                   style={{ background: `linear-gradient(135deg, var(--color-primary-50), var(--color-primary-100))` }}>
-                <FaSearch className="w-8 h-8" style={{ color: 'var(--color-primary-600)' }} />
-              </div>
-              <h3 className="text-xl font-bold text-medical-primary mb-3">State-of-the-Art Technology</h3>
-              <p className="text-medical-secondary">High-resolution imaging and precision navigation systems for optimal treatment accuracy.</p>
-            </div>
-
-            <div className="stat-card">
-              <div className="service-icon mx-auto mb-4" 
-                   style={{ background: `linear-gradient(135deg, var(--color-success-50), var(--color-success-100))` }}>
-                <FaHeartbeat className="w-8 h-8" style={{ color: 'var(--color-success-600)' }} />
-              </div>
-              <h3 className="text-xl font-bold text-medical-primary mb-3">Patient-Centered Care</h3>
-              <p className="text-medical-secondary">Individualized assessment and long-term follow-up to ensure the best possible outcomes.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      </section>
     </div>
   );
 };

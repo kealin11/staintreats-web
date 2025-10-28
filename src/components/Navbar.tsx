@@ -21,28 +21,28 @@ const Navbar = () => {
         </Link>
 
         {/* DESKTOP NAV LINKS */}
-        <nav className="hidden md:flex gap-8 text-gray-800 font-semibold items-center">
+        <nav className="hidden md:flex gap-8 font-semibold items-center">
           <Link
             to="/"
-            className="hover:text-red-600 transition-colors duration-200"
+            className="text-red-600 no-underline transition-colors duration-200"
           >
             Home
           </Link>
           <Link
             to="/services"
-            className="hover:text-red-600 transition-colors duration-200"
+            className="text-red-600 no-underline transition-colors duration-200"
           >
             Services
           </Link>
           <Link
             to="/about"
-            className="hover:text-red-600 transition-colors duration-200"
+            className="text-red-600 no-underline transition-colors duration-200"
           >
             About Us
           </Link>
           <Link
             to="/contact"
-            className="hover:text-red-600 transition-colors duration-200"
+            className="text-red-600 no-underline transition-colors duration-200"
           >
             Contact
           </Link>
