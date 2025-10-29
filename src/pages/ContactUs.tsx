@@ -1,56 +1,61 @@
-import { FaBrain } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Clock, MessageSquare } from "lucide-react";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-[#F4F9FF]">
-      {/* WELCOME BANNER */}
+    <div className="min-h-screen bg-white text-[#1E293B]">
+      {/* HERO SECTION */}
       <div
-        className="relative h-[650px] bg-cover bg-center flex items-center justify-center text-center"
-        style={{ backgroundImage: "url('/team 1.jpg')" }}
+        className="relative h-[600px] bg-cover bg-center flex items-center justify-center text-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1603898037225-1b99a2f0d1e5?auto=format&fit=crop&w=1600&q=80')",
+        }}
       >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
 
-        {/* Content */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          {/* Small Label */}
-          <span className="bg-white text-black text-sm md:text-base font-semibold px-4 py-1 rounded-full uppercase tracking-widest mb-8 inline-block">
-            <div>
-              <FaBrain className="w-8 h-8 mx-auto" />
-            </div>
-          </span>
-          
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Contact Us
+        <motion.div
+          className="relative z-10 text-white px-6 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+            Get in <span className="text-red-500">Touch</span>
           </h1>
-          
-          {/* Description */}
-          <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-            Comprehensive information about stroke prevention, symptoms, and treatment
+          <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
+            Whether you’re looking to book a wash, get a quote, or learn more
+            about our packages — we’re here to help!
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* CONTACT SECTION */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-[#F9FAFB] p-8 rounded-xl shadow-md">
-            <h2 className="text-2xl font-bold text-[#1E293B] mb-4">Contact With Us</h2>
+          <motion.div
+            className="bg-white p-8 rounded-2xl shadow-md"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl font-bold text-[#1E293B] mb-4">
+              Send Us a Message
+            </h2>
             <p className="text-gray-600 mb-6">
-              Send us a message and we’ll respond as soon as possible.
+              Have a question or want to schedule a service? Fill out the form
+              below and our team will get back to you shortly.
             </p>
 
-            {/* FormSubmit Form */}
             <form
-              action="https://formsubmit.co/Radiology@milrad.co.za"
+              action="https://formsubmit.co/jd.stain@gmail.com"
               method="POST"
               className="space-y-4"
             >
-              {/* Hidden fields */}
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://milpark-website.vercel.app/" />
+              <input type="hidden" name="_subject" value="New Contact Form Message" />
+              <input type="hidden" name="_next" value="https://staintreats.co.za/thank-you" />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
@@ -58,14 +63,14 @@ const Contact = () => {
                   name="First Name"
                   placeholder="First Name*"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#2563EB] outline-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-600 outline-none"
                 />
                 <input
                   type="text"
                   name="Last Name"
                   placeholder="Last Name*"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#2563EB] outline-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-600 outline-none"
                 />
               </div>
 
@@ -75,14 +80,14 @@ const Contact = () => {
                   name="Email"
                   placeholder="Email Address*"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#2563EB] outline-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-600 outline-none"
                 />
                 <input
                   type="tel"
                   name="Phone"
                   placeholder="Phone Number*"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#2563EB] outline-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-600 outline-none"
                 />
               </div>
 
@@ -90,53 +95,75 @@ const Contact = () => {
                 type="text"
                 name="Subject"
                 placeholder="Subject"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#2563EB] outline-none"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-600 outline-none"
               />
 
               <textarea
                 name="Message"
-                rows={4}
-                placeholder="Your Message here"
+                rows={5}
+                placeholder="Your Message..."
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#2563EB] outline-none"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-600 outline-none"
               ></textarea>
 
               <button
                 type="submit"
-                className="w-full bg-[#2563EB] hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition"
+                className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition transform hover:scale-105 shadow-lg"
               >
                 Send Message →
               </button>
             </form>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-[#1E293B] mb-4">Need Any Help?</h2>
-            <p className="text-gray-600">
-              Call us or send a message and we’ll respond as soon as possible.
+          <motion.div
+            className="flex flex-col justify-center space-y-6"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl font-bold text-[#1E293B] mb-4">
+              Contact Information
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Visit us, give us a call, or send a message — we’re always ready
+              to make your car shine like new.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-4 text-lg">
               <div className="flex items-center gap-3">
-                <span className="text-[#2563EB] text-2xl">📞</span>
-                <p>27 011 726 4220/9</p>
+                <Phone className="w-6 h-6 text-red-600" />
+                <p>
+                  <a href="tel:+27670997668" className="hover:underline">
+                    067 099 7668
+                  </a>{" "}
+                  /{" "}
+                  <a href="tel:+27815326178" className="hover:underline">
+                    081 532 6178
+                  </a>
+                </p>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-[#2563EB] text-2xl">📧</span>
-                <p>international@milrad.co.za</p>
+                <Mail className="w-6 h-6 text-red-600" />
+                <a href="mailto:jd.stain@gmail.com" className="hover:underline">
+                  jd.stain@gmail.com
+                </a>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-[#2563EB] text-2xl">📍</span>
-                <p>Netcare Milpark Hospital, 9 Guild Rd, Parktown, Johannesburg, 2193</p>
+                <MapPin className="w-6 h-6 text-red-600" />
+                <p>12 Saint Joan Ave, Eldorado Park, Johannesburg, South Africa</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Clock className="w-6 h-6 text-red-600" />
+                <p>Mon – Sun: 08:00 – 18:00</p>
               </div>
             </div>
 
             {/* Google Maps Embed */}
-            <div className="rounded-xl overflow-hidden shadow-lg mt-6">
+            <div className="rounded-2xl overflow-hidden shadow-lg mt-6">
               <iframe
-                title="Google Maps"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5166091318674!2d28.01487897420074!3d-26.179867962981014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950b8a9f1d73a5%3A0x76589ece2cee093c!2sNetcare%20Milpark%20Hospital!5e0!3m2!1sen!2sza!4v1756218237530!5m2!1sen!2sza"
+                title="StainTreats Car Wash Location"
+                src="https://www.google.com/maps?q=12+Saint+Joan+Ave,+Eldorado+Park,+Johannesburg,+South+Africa&output=embed"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
@@ -144,9 +171,25 @@ const Contact = () => {
                 loading="lazy"
               ></iframe>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* CTA STRIP */}
+      <div className="bg-gradient-to-r from-red-700 to-red-500 py-10 text-center text-white">
+        <h3 className="text-2xl md:text-3xl font-bold mb-3">
+          Let’s Make Your Car Shine Today!
+        </h3>
+        <p className="text-red-100 mb-4">
+          Reach out and book your next premium wash experience.
+        </p>
+        <a
+          href="tel:+27670997668"
+          className="inline-block bg-white text-red-700 font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition shadow-md"
+        >
+          Call Now
+        </a>
+      </div>
     </div>
   );
 };

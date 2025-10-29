@@ -1,166 +1,176 @@
-import { FaBrain, FaStethoscope, FaUsers, FaHeartbeat } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Car, Sparkles, Leaf, Users, Shield } from "lucide-react";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-[#F4F9FF]">
-      {/* ABOUT HERO BANNER */}
+    <div className="min-h-screen bg-white text-[#1E293B]">
+      {/* HERO SECTION */}
       <div
         className="relative h-[650px] bg-cover bg-center flex items-center justify-center text-center"
-        style={{ backgroundImage: "url('/candit 1.jpg')" }}
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1601903721740-3b3d9b1656b2?auto=format&fit=crop&w=1600&q=80')",
+        }}
       >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-
-        {/* Content */}
-        <div className="relative z-10 px-6 max-w-3xl mx-auto">
-          <div className="flex justify-center mb-6">
-            <FaBrain className="w-14 h-14 text-white" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About Us
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent"></div>
+        <motion.div
+          className="relative z-10 px-6 max-w-3xl mx-auto text-white"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+            About <span className="text-red-500">StainTreats Unlimited</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-200">
-            At the MILPARK Neurointerventional Unit, we are dedicated to
-            advancing neurovascular and spinal care with precision, innovation,
-            and compassion.
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto leading-relaxed">
+            “Giving You More Than What You Asked For” — redefining the car wash
+            experience through quality, care, and innovation since 2019.
           </p>
-        </div>
+        </motion.div>
       </div>
 
-      {/* INTRO SECTION */}
+      {/* MISSION & STORY */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <div className="w-full h-96 overflow-hidden rounded-lg shadow-lg">
+          <div className="rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="/work 6.jpg"
-              alt="Neurointervention Care"
-              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1603898037225-1b99a2f0d1e5?auto=format&fit=crop&w=900&q=80"
+              alt="Car Wash in Action"
+              className="w-full h-[400px] object-cover"
             />
           </div>
 
           {/* Text */}
-          <div>
-            <span className="text-sm font-semibold uppercase text-[#2563EB] tracking-widest">
-              Our Mission
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-sm font-semibold uppercase text-red-600 tracking-widest">
+              Our Story
             </span>
-            <h2 className="text-4xl font-bold text-[#1E293B] leading-snug mt-4">
-              World-Class Minimally Invasive Neurovascular & Spinal Care
+            <h2 className="text-4xl font-extrabold text-[#1E293B] mt-3 mb-4">
+              Redefining Car Care Since 2019
             </h2>
-            <p className="text-gray-600 mt-4">
-              At the MILPARK Neurointerventional Unit, we are dedicated to
-              providing advanced care for complex neurovascular and spinal
-              conditions. Guided by evidence-based practice, we combine
-              state-of-the-art technology with compassion to achieve optimal
-              patient outcomes.
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Founded in 2019, StainTreats Wash Station set out not just to wash
+              cars — but to redefine what a car wash could be. The founders saw
+              a gap between typical car wash experiences and what customers
+              truly desired: attention to detail, respect, and an unforgettable
+              shine.
             </p>
-
-            <div className="mt-6 space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="text-[#2563EB] text-xl">✔</span>
-                <p>Safe, timely, and effective interventions</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-[#2563EB] text-xl">✔</span>
-                <p>Cutting-edge technology with expert precision</p>
-              </div>
-            </div>
-
-            <Link
-              to="/team"
-              className="mt-6 inline-block bg-[#2563EB] hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition"
-            >
-              Meet the Team
-            </Link>
-          </div>
+            <p className="text-gray-700 leading-relaxed">
+              StainTreats quickly became known for quality, innovation, and
+              community focus — creating a place where every visit feels more
+              like a treat than a task.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* SPECIALIST SECTION */}
-      <section className="bg-[#F4F9FF] py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-[#1E293B] mb-6">
-            Meet Dr. Moaaz Valli Omar
+      {/* MISSION STATEMENT */}
+      <section className="bg-[#F9FAFB] py-20 text-center">
+        <motion.div
+          className="max-w-4xl mx-auto px-6"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl font-extrabold text-[#1E293B] mb-6">
+            Our Mission
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            “At StainTreats Car Wash, our mission is to deliver more than just a
+            clean car — we’re here to provide an exceptional experience that
+            goes beyond expectations. We offer a level of quality, care, and
+            attention that transforms a simple wash into a refreshing
+            experience.”
+          </p>
+          <p className="text-red-600 font-semibold">
+            A car wash should be more than a service — it should be an
+            experience.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* WHY STAINTREATS SECTION */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-[#1E293B] mb-4">
+            What Makes Us Different
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Our neuro-intervention specialist, Dr. Moaz Omar, combines of
-            expertise with cutting-edge technology to deliver life-saving
-            treatments such as acute stroke thrombectomy, aneurysm repair, and
-            management of arteriovenous malformations.
+            We don’t just clean cars — we elevate the experience. Every detail,
+            every wash, and every shine reflects our promise to give customers
+            “more than what they asked for.”
           </p>
         </div>
-      </section>
 
-      {/* SERVICES GRID */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="p-6 bg-[#F4F9FF] rounded-xl shadow hover:shadow-md transition">
-            <FaHeartbeat className="w-10 h-10 mx-auto text-[#2563EB] mb-4" />
-            <h3 className="font-bold text-lg text-[#1E293B]">Stroke Thrombectomy</h3>
-            <p className="text-gray-600 mt-2">
-              Rapid, minimally invasive treatment for acute stroke.
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="p-8 bg-[#F9FAFB] rounded-2xl shadow hover:shadow-lg transition">
+            <Sparkles className="w-10 h-10 text-red-600 mx-auto mb-4" />
+            <h3 className="font-bold text-lg text-[#1E293B] mb-2">
+              Exceptional Service
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Delivering top-tier cleaning with precision and care, inside and
+              out.
             </p>
           </div>
-          <div className="p-6 bg-[#F4F9FF] rounded-xl shadow hover:shadow-md transition">
-            <FaStethoscope className="w-10 h-10 mx-auto text-[#2563EB] mb-4" />
-            <h3 className="font-bold text-lg text-[#1E293B]">Aneurysm Repair</h3>
-            <p className="text-gray-600 mt-2">
-              Advanced procedures to restore vascular integrity and prevent
-              rupture.
+
+          <div className="p-8 bg-[#F9FAFB] rounded-2xl shadow hover:shadow-lg transition">
+            <Leaf className="w-10 h-10 text-red-600 mx-auto mb-4" />
+            <h3 className="font-bold text-lg text-[#1E293B] mb-2">
+              Eco-Friendly
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Using biodegradable, water-saving products to protect the planet.
             </p>
           </div>
-          <div className="p-6 bg-[#F4F9FF] rounded-xl shadow hover:shadow-md transition">
-            <FaUsers className="w-10 h-10 mx-auto text-[#2563EB] mb-4" />
-            <h3 className="font-bold text-lg text-[#1E293B]">AVM Treatments</h3>
-            <p className="text-gray-600 mt-2">
-              Tailored care for arteriovenous malformations with precision and
-              safety.
+
+          <div className="p-8 bg-[#F9FAFB] rounded-2xl shadow hover:shadow-lg transition">
+            <Shield className="w-10 h-10 text-red-600 mx-auto mb-4" />
+            <h3 className="font-bold text-lg text-[#1E293B] mb-2">
+              Consistency & Care
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Every car receives the same attention and care — every single
+              time.
+            </p>
+          </div>
+
+          <div className="p-8 bg-[#F9FAFB] rounded-2xl shadow hover:shadow-lg transition">
+            <Users className="w-10 h-10 text-red-600 mx-auto mb-4" />
+            <h3 className="font-bold text-lg text-[#1E293B] mb-2">
+              Community Focused
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Building long-term relationships through service, trust, and
+              respect.
             </p>
           </div>
         </div>
       </section>
 
-      {/* COLLABORATION SECTION */}
-      <section className="py-20 bg-[#F4F9FF]">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text */}
-          <div>
-            <h2 className="text-3xl font-bold text-[#1E293B]">
-              Collaboration & Research
-            </h2>
-            <p className="text-gray-600 mt-4">
-              Collaboration is at the heart of what we do. We work closely with
-              neurologists, neurosurgeons, and multidisciplinary teams to ensure
-              comprehensive treatment. Beyond interventions, we emphasize
-              patient education, family support, and pioneering research that
-              pushes the boundaries of neurovascular care.
-            </p>
-
-            <ul className="mt-6 space-y-3 text-gray-700">
-              <li className="flex items-center gap-3">
-                <span className="text-[#2563EB] text-xl">✔</span> Multidisciplinary teamwork
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-[#2563EB] text-xl">✔</span> Patient & family-centered care
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-[#2563EB] text-xl">✔</span> Ongoing research & innovation
-              </li>
-            </ul>
-          </div>
-
-          {/* Image */}
-          <div className="relative w-full h-72 overflow-hidden rounded-lg shadow-lg">
-            <img
-              src="/candit 2.jpg"
-              alt="Collaboration in Care"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-4 left-4 bg-white px-6 py-3 rounded-lg shadow text-[#1E293B] font-semibold">
-              Restoring lives, one intervention at a time
-            </div>
-          </div>
+      {/* CTA SECTION */}
+      <section className="bg-gradient-to-r from-red-700 to-red-500 py-20 text-center text-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-extrabold mb-6">
+            “There’s No Traffic Jam Along The Extra Mile”
+          </h2>
+          <p className="text-lg mb-8 text-red-100">
+            StainTreats continues to raise the standard of vehicle care —
+            turning every wash into an experience of excellence and attention to
+            detail.
+          </p>
+          <Link
+            to="/contact"
+            className="bg-white text-red-700 font-bold px-10 py-4 rounded-full hover:bg-gray-100 transition shadow-md"
+          >
+            Contact Us Today
+          </Link>
         </div>
       </section>
     </div>
