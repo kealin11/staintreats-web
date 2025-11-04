@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Car, Sparkles, Leaf, Users, Shield } from "lucide-react";
+import { Sparkles, Leaf, Users, Shield } from "lucide-react";
 
 const About = () => {
   return (
