@@ -49,7 +49,7 @@ const Services = () => {
         className="relative h-[600px] bg-cover bg-center flex items-center justify-center text-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1597008190853-bf0b0c497f8f?auto=format&fit=crop&w=1600&q=80')",
+            "url('/car10.jpeg')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent"></div>
@@ -59,7 +59,7 @@ const Services = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+          <h1 className="text-white text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
             Our <span className="text-red-500">Unlimited Wash</span> Packages
           </h1>
           <p className="text-gray-200 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">

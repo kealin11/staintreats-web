@@ -16,8 +16,7 @@ const HeroSection = () => {
       <div
         className="relative h-[700px] bg-cover bg-center flex items-center justify-center text-center overflow-hidden"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1601903721740-3b3d9b1656b2?auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: "url('/car10.jpeg')", // ✅ Local image from public folder
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
@@ -32,7 +31,7 @@ const HeroSection = () => {
             🚗 Welcome to StainTreats
           </span>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+          <h1 className="text-white text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
             Making Your Ride <span className="text-red-500">Shine</span> Every Time
           </h1>
 
@@ -81,8 +80,8 @@ const HeroSection = () => {
             </p>
             <p className="text-gray-700 leading-relaxed">
               From mobile detailing to premium protection, we’ve made quality
-              and trust the heart of our brand. <strong>“Giving you more than
-              what you asked for.”</strong>
+              and trust the heart of our brand.{" "}
+              <strong>“Giving you more than what you asked for.”</strong>
             </p>
           </motion.div>
 
@@ -179,7 +178,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1603898037225-1b99a2f0d1e5?auto=format&fit=crop&w=800&q=80"
+              src="/car4.jpeg"
               alt="Our Team"
               className="w-full h-[600px] object-cover"
             />

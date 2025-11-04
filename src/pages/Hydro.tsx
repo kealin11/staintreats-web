@@ -52,7 +52,7 @@ const HydroPackages = () => {
         className="relative h-[600px] bg-cover bg-center flex items-center justify-center text-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1623387641168-c7b25b6265f3?auto=format&fit=crop&w=1600&q=80')",
+            "url('/car5.jpeg')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
@@ -62,7 +62,7 @@ const HydroPackages = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+          <h1 className="text-white text-5xl md:text-7xl font-extrabold leading-tight mb-4 drop-shadow-lg">
             Hydrophobic <span className="text-red-500">Wash Packages</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8">

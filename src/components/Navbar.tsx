@@ -51,7 +51,7 @@ const Navbar = () => {
         {/* SOCIALS + MOBILE TOGGLE */}
         <div className="flex items-center gap-4">
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/Staintreats/"
             target="_blank"
             rel="noreferrer"
             className="text-gray-700 hover:text-red-600 transition-colors"
@@ -59,7 +59,7 @@ const Navbar = () => {
             <FaFacebookF className="text-xl" />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/staintreats_290503/"
             target="_blank"
             rel="noreferrer"
             className="text-gray-700 hover:text-red-600 transition-colors"

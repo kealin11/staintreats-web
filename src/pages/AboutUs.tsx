@@ -10,7 +10,7 @@ const About = () => {
         className="relative h-[650px] bg-cover bg-center flex items-center justify-center text-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1601903721740-3b3d9b1656b2?auto=format&fit=crop&w=1600&q=80')",
+            "url('/car10.jpeg')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent"></div>
@@ -20,7 +20,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+          <h1 className="text-white text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
             About <span className="text-red-500">StainTreats Unlimited</span>
           </h1>
           <p className="text-gray-200 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -36,7 +36,7 @@ const About = () => {
           {/* Image */}
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="https://images.unsplash.com/photo-1603898037225-1b99a2f0d1e5?auto=format&fit=crop&w=900&q=80"
+              src="/car4.jpeg"
               alt="Car Wash in Action"
               className="w-full h-[400px] object-cover"
             />
