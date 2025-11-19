@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock,  } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -8,8 +8,7 @@ const Contact = () => {
       <div
         className="relative h-[600px] bg-cover bg-center flex items-center justify-center text-center"
         style={{
-          backgroundImage:
-            "url('/car10.jpeg')",
+          backgroundImage: "url('/car10.jpeg')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
@@ -55,7 +54,11 @@ const Contact = () => {
             >
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New Contact Form Message" />
-              <input type="hidden" name="_next" value="https://staintreats.co.za/thank-you" />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://staintreats.co.za/thank-you"
+              />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
@@ -97,6 +100,27 @@ const Contact = () => {
                 placeholder="Subject"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-600 outline-none"
               />
+
+              {/* SERVICES DROPDOWN */}
+              <select
+                name="Service Interested In"
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-600 outline-none"
+              >
+                <option value="">Select a Service...</option>
+                {/* Walk-In Services */}
+                <option value="Exterior Wash">Exterior Wash</option>
+                <option value="Full Wash (In & Out)">Full Wash (In & Out)</option>
+                <option value="Engine Wash">Engine Wash</option>
+                <option value="Hand Polish">Hand Polish</option>
+                {/* Unlimited Packages */}
+                <option value="Basic Wash Plan">Basic Wash Plan</option>
+                <option value="Super Wash Plan">Super Wash Plan</option>
+                <option value="Deluxe Wash Plan">Deluxe Wash Plan</option>
+                {/* Add-On Services */}
+                <option value="Hydro Detailing">Hydro Detailing</option>
+                <option value="Premium Detailing">Premium Detailing</option>
+              </select>
 
               <textarea
                 name="Message"

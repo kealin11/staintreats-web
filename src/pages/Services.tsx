@@ -3,6 +3,29 @@ import { motion } from "framer-motion";
 import { Car, Droplet, Sparkles, Shield, Clock, Crown } from "lucide-react";
 
 const Services = () => {
+  const walkIns = [
+    {
+      title: "Exterior Wash",
+      price: "R80",
+      desc: "Quick and effective exterior clean for a fresh shine.",
+    },
+    {
+      title: "Full Wash (In & Out)",
+      price: "R150",
+      desc: "Exterior wash + full interior vacuum and wipe down.",
+    },
+    {
+      title: "Engine Wash",
+      price: "R120",
+      desc: "Gentle but thorough engine bay cleaning.",
+    },
+    {
+      title: "Hand Polish",
+      price: "R250",
+      desc: "Boost shine and rejuvenate paint with a deep hand polish.",
+    },
+  ];
+
   const packages = [
     {
       title: "Basic Wash",
@@ -48,8 +71,7 @@ const Services = () => {
       <div
         className="relative h-[600px] bg-cover bg-center flex items-center justify-center text-center"
         style={{
-          backgroundImage:
-            "url('/car10.jpeg')",
+          backgroundImage: "url('/car10.jpeg')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent"></div>
@@ -75,7 +97,45 @@ const Services = () => {
         </motion.div>
       </div>
 
-      {/* PACKAGES SECTION */}
+      {/* WALK-IN PRICES SECTION */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.h2
+            className="text-4xl font-extrabold text-[#1E293B] mb-6"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            🧼 Walk-In Price List
+          </motion.h2>
+
+          {/* 6th Wash Free Banner */}
+          <motion.p
+            className="text-lg text-red-600 font-semibold mb-10 bg-red-50 py-3 rounded-xl max-w-2xl mx-auto shadow-sm border border-red-200"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            🌟 Loyalty Reward: After every 5 washes, your 6th wash is completely FREE!
+          </motion.p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            {walkIns.map(({ title, price, desc }, idx) => (
+              <motion.div
+                key={idx}
+                className="p-8 bg-[#F9FAFB] rounded-2xl shadow-md border border-gray-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+                whileHover={{ scale: 1.03 }}
+              >
+                <h3 className="text-2xl font-bold text-[#1E293B] mb-2">{title}</h3>
+                <p className="text-gray-600 mb-4">{desc}</p>
+                <p className="text-red-600 text-xl font-extrabold">{price}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* UNLIMITED PACKAGES SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h2
@@ -116,9 +176,7 @@ const Services = () => {
       {/* ADD-ON SERVICES */}
       <section className="bg-[#1E293B] text-white py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-extrabold mb-12 text-white">
-            🔥 Add-On & Hydro Services
-          </h2>
+          <h2 className="text-4xl font-extrabold mb-12 text-white">🔥 Add-On & Hydro Services</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {addOns.map(({ title, desc, icon: Icon, features }, idx) => (
@@ -156,7 +214,7 @@ const Services = () => {
             monthly fee.
           </p>
           <Link
-            to="/signup"
+            to="/contact"
             className="bg-white text-red-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-transform shadow-md"
           >
             Become a Member

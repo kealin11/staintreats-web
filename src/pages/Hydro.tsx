@@ -52,7 +52,7 @@ const HydroPackages = () => {
         className="relative h-[600px] bg-cover bg-center flex items-center justify-center text-center"
         style={{
           backgroundImage:
-            "url('/car5.jpeg')",
+            "url('/car10.jpeg')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>

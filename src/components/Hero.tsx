@@ -27,12 +27,12 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <span className="bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm md:text-base font-semibold px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block shadow-lg">
-            🚗 Welcome to StainTreats
+          <span className="bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm md:text-base font-semibold px-5 py-3 rounded-full uppercase tracking-widest mb-6 inline-block shadow-lg">
+            🚗 Welcome to StainTreats Detailing Service 
           </span>
 
-          <h1 className="text-white text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-            Making Your Ride <span className="text-red-500">Shine</span> Every Time
+          <h1 className="text-white text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+            Giving You <span className="text-red-500">More</span> Than What You Asked For
           </h1>
 
           <p className="text-gray-200 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -210,50 +210,56 @@ const HeroSection = () => {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
-      <section
-        id="contact"
-        className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-20"
-      >
-        <div className="bg-gradient-to-r from-red-700 to-red-500 p-12 md:p-20 text-white relative">
-          <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div>
-              <h3 className="text-xl font-bold mb-4">📍 Visit Us</h3>
-              <p>12 Saint Joan Ave</p>
-              <p>Eldorado Park</p>
-              <p>Johannesburg, South Africa</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">📞 Contact Info</h3>
-              <p>
-                Phone:{" "}
-                <a
-                  href="tel:+27670997668"
-                  className="hover:underline text-white"
-                >
-                  067 099 7668 / 081 532 6178
-                </a>
-              </p>
-              <p>
-                Email:{" "}
-                <a
-                  href="mailto:jd.stain@gmail.com"
-                  className="hover:underline text-white"
-                >
-                  jd.stain@gmail.com
-                </a>
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">🕒 Opening Hours</h3>
-              <p>Mon - Sun: 08:00 - 18:00</p>
-            </div>
-          </div>
-          <div className="mt-10 text-center text-sm opacity-80">
-            &copy; {new Date().getFullYear()} StainTreats Car Wash. All rights reserved.
-          </div>
-        </div>
-      </section>
+{/* CONTACT SECTION */}
+<section
+  id="contact"
+  className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-20"
+>
+  <div className="bg-gradient-to-r from-red-700 to-red-500 p-12 md:p-20 text-white relative">
+    <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <div className="text-white">
+        <h3 className="text-xl font-bold mb-4">📍 Visit Us</h3>
+        <p className="text-white">12 Saint Joan Ave</p>
+        <p className="text-white">Eldorado Park</p>
+        <p className="text-white">Johannesburg, South Africa</p>
+      </div>
+
+      <div className="text-white">
+        <h3 className="text-xl font-bold mb-4">📞 Contact Info</h3>
+        <p className="text-white">
+          Phone:{" "}
+          <a
+            href="tel:+27670997668"
+            className="hover:underline text-white"
+          >
+            067 099 7668 / 081 532 6178
+          </a>
+        </p>
+        <p className="text-white">
+          Email:{" "}
+          <a
+            href="mailto:jd.stain@gmail.com"
+            className="hover:underline text-white"
+          >
+            jd.stain@gmail.com
+          </a>
+        </p>
+      </div>
+
+      <div className="text-white">
+        <h3 className="text-xl font-bold mb-4">🕒 Opening Hours</h3>
+        <p className="text-white">Mon - Sun: 08:00 - 18:00</p>
+      </div>
+
+    </div>
+
+    <div className="mt-10 text-center text-sm opacity-80 text-white">
+      &copy; {new Date().getFullYear()} StainTreats Car Wash. All rights reserved.
+    </div>
+  </div>
+</section>
+
     </>
   );
 };
