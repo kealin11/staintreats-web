@@ -132,7 +132,7 @@ const HydroPackages = () => {
             hydrophobic wash technology.
           </p>
           <Link
-            to="/signup"
+            to="/contact"
             className="bg-white text-red-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-transform shadow-md"
           >
             Sign Up for a Hydro Plan
