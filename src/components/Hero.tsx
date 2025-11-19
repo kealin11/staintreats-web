@@ -31,14 +31,9 @@ const HeroSection = () => {
             🚗 Welcome to StainTreats Detailing Service 
           </span>
 
-          <h1 className="text-white text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+          <h1 className="text-white text-4xl md:text-4xl font-extrabold leading-tight mb-6 drop-shadow-lg">
             Giving You <span className="text-red-500">More</span> Than What You Asked For
           </h1>
-
-          <p className="text-gray-200 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-            There’s no traffic jam along the extra mile. Experience premium
-            vehicle care that’s fast, fun, and flawless.
-          </p>
 
           <div className="flex flex-wrap justify-center gap-6">
             <Link
