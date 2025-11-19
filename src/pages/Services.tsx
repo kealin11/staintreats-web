@@ -106,7 +106,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            🧼 Essentials Wash - Everythinh you need, Fast and Fresh
+            🧼 Essentials Wash - Everythinh You Need, Fast & Fresh
           </motion.h2>
 
           {/* 6th Wash Free Banner */}
