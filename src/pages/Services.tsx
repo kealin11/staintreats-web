@@ -5,23 +5,23 @@ import { Car, Droplet, Sparkles, Shield, Clock, Crown } from "lucide-react";
 const Services = () => {
   const walkIns = [
     {
-      title: "Exterior Wash",
+      title: "Basix Wash",
       price: "R80",
       desc: "Quick and effective exterior clean for a fresh shine.",
     },
     {
-      title: "Full Wash (In & Out)",
-      price: "R150",
+      title: "Super Wash (In & Out)",
+      price: "R90",
       desc: "Exterior wash + full interior vacuum and wipe down.",
     },
     {
       title: "Engine Wash",
-      price: "R120",
+      price: "R180",
       desc: "Gentle but thorough engine bay cleaning.",
     },
     {
-      title: "Hand Polish",
-      price: "R250",
+      title: "Polish Treatments",
+      price: "R160-R250",
       desc: "Boost shine and rejuvenate paint with a deep hand polish.",
     },
   ];
@@ -106,7 +106,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            🧼 Walk-In Price List
+            🧼 Essentials Wash - Everythinh you need, Fast and Fresh
           </motion.h2>
 
           {/* 6th Wash Free Banner */}
